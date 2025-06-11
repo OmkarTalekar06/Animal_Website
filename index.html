@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal welfare</title>
+    <script src="website.js"></script>
+    <link rel="stylesheet" href="website.css">
+</head>
+<style>
+    *{
+        cursor: pointer;
+        margin: 0;
+    }
+    body{
+        background-color: #c29f6e;
+    }
+    .head{
+        position: relative; 
+        width: 100%;
+        height: 20vh;
+        background-color: #333;
+        top: 0; 
+        left:0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 45px;
+        padding-bottom: 10px;
+        padding-left: 30px;
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    #logo:hover{
+        color: aliceblue;
+    }
+    #hd{
+        margin-right: 25px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #555;
+        color: white;
+        border: none;
+        cursor: pointer;
+        animation: fadeIn 1s ease-in-out ;
+    }
+    #hd:hover {
+        background-color: #777;
+        animation: nav 1s ease-in-out;
+    }
+    .nav{
+        position: relative;
+        width: 100%;
+        height: 7vh;
+        background-color: #ab0303;
+        top:0;
+        left: 0;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        
+        box-sizing: border-box;
+        }
+    #nav-bar{
+        float: left;
+        margin-left: 55px;
+        list-style: none;
+    }
+    #nav-bar:hover{
+            color:rgb(240, 144, 0);
+        animation:nav 1s ease-in-out; 
+        cursor: pointer;       
+    }
+    @keyframes nav{
+        0%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(1.3);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
+    @keyframes colch {
+        0%{
+            background-color: #ab0303;
+        }
+        20%{
+            background-color: rgb(245, 112, 10);
+        }
+        40%{
+            background-color: rgb(88, 6, 88);
+        }
+        60%{
+            background-color: rgb(13, 250, 250);
+        }
+        80%{
+            background-color: rgb(244, 96, 4);
+        }
+        100%{
+            background-color: #ab0303;
+        }
+    }
+    @keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+    @keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.05); }
+}
+    #nav-but{
+        float: left;
+        margin-left: 510px;
+        background-color: #555;
+        padding: 08px 15px
+        
+    }
+     #nav-but:hover{
+        animation: colch 2s infinite;
+        display: block; 
+     }
+     #nav-hg{
+        height:28vh;
+        position:fixed;
+        margin-left: 1100px;
+        margin-top: 80px;
+        background-color: gray;
+        flex-direction: column;    
+        align-self: center;
+        display: none;
+        
+     }
+     .nav-bar{
+        list-style: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        
+     }
+     #nav-ul{
+        padding: 0;
+        justify-self:center;
+     }
+     .main{
+        position:relative;
+        top:10vh;
+     }
+     .main ul{
+        margin-top: 20px;
+        font-size: 28px;
+        margin-left: 30px;
+     }
+     .main li{
+        margin-top: 20px;
+
+     }
+     .main h1{
+        font-size: 50px;
+        margin-left: 30px;
+     }
+
+     .image #wolf{
+        height: 300px;
+        width: 500px;
+        position: relative;
+        margin-top: -10vh;
+        margin-left: 700px;
+        border-radius: 50px;
+        animation: fadeIn 1s ease-in-out;
+     }
+    
+    .fade-in{
+        animation: fadeIn 1s ease-in-out;
+    }
+    .action{
+        margin-top: 10vh;
+        display:flex;
+    }
+    .action div{
+        margin-bottom: 20px;
+        height: 300px;
+        width: 200px;
+        background-color: #333;
+        margin-left: 160px;
+    }
+    .act{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+        border: 2px black solid;
+    }
+    .act:hover{
+        background-color:gray;
+    }
+    .act input{
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #555;
+        color: rgb(249, 247, 249);
+        border: 1px black solid;
+        cursor: pointer;
+    }
+    .act input:hover{
+        animation: nav 1s ease-in-out;
+    }
+    .footer{
+        height: 50vh;
+        background-color: #333;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 5%;
+    }
+    .foot{
+        float: left;
+        margin-left: 20%;
+        font-size: 24px;
+        margin-top: 10px;
+    }
+</style>
+<body onload="imchange()">
+    <header>
+    <div class="head">
+        <div class="logo">
+            <h4 id="logo">WildCraft<sup>&#174</sup></h4>
+        </div>
+        <div>
+        <a href="contact.html"><button id="hd">contact</button></a>
+        <button id="hd">help</button>
+        </div>
+    </div>
+    </header>
+    <nav>
+   <div class="nav">
+            <ul>
+            <li id="nav-bar">Products</li>
+            <li id="nav-bar">Services</li>
+            <li id="nav-bar">About</li>
+            <li id="nav-bar">Organisations</li>
+            <li id="nav-bar">Donate</li>
+            </ul>
+            <button id="nav-but">&#128276</button>
+        </div>
+        <div id="nav-hg">
+            <ul id="nav-ul">
+                <li class="nav-bar"><button>Login</button></li>
+                <li class="nav-bar"><button>sign-up</button></li>
+                <li class="nav-bar"><button>Feedback</button></li>
+                <li class="nav-bar"><button>Report</button></li>
+                <li class="nav-bar"><button>News</button></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main">
+        <h1>WildCraft</h1>
+        <ul>
+        <li>WildCraft is a non-profit organisation that works for the welfare of animals.</li>
+        <li>We are Gov recognised</li>
+        <li>We make shelters for animal welfare</li>
+        <li>We adopt endangering animals</li>
+        </ul>
+    </div>
+    <div class="image">
+        <img src="wolf.png" id="wolf">
+    </div>
+    <div class="action">
+        <div class="act">
+            <h1>Donate</h1>
+            <p>Donate for welfare of animals</p>
+            <input type="button" value="donate">
+        </div>
+        <div class="act">
+            <h1>Adopt</h1>
+            <p>Adopt animals</p>
+            <input type="button" value="Adopt">
+        </div>
+        <div class="act">
+            <h1>Join Us</h1>
+            <p>Join us on rescue missions</p>
+            <input type="button" value="apply now">
+        </div>
+    </div>
+    <div class="footer">
+        <h1>About Us</h1>
+        <div class="foot">
+            <h2>Adress</h2>
+            <p>New Delhi Office:</p>
+            <p>B.k Bharat street,Red fort road,</p>
+            <p>New Delhi</p>
+            <P>Mumbai Office:</P>
+            <p>Array colony,Mathuradas road,</p>
+            <p>Goregaon(E)</p>
+            <p>Mumbai:400062</p>
+        </div>
+        <div class="foot">
+            <h2>Contact nos.</h2>
+            <p>Offices:</p>
+            <p>New Delhi:997989009</p>
+            <p>Mumbai:87871039</p>
+            <p>Varanasi:832648703</p>
+            <p>Andaman: 7938709134</p>
+        </div>
+    </div>
+</body>
+</html>
