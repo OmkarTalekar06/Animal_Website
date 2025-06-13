@@ -33,4 +33,10 @@
     } else {
         document.getElementById("wildman").style.backgroundColor = "#e97474"
     }
+    if(marks<10){
+        alert("You have got very less score, spend more time in nature \n Your score is "+ marks);
+    }
+    else{
+        alert("Congratulations!!! \nYou have an amazing score in the quiz \nYour score is "+ marks);
+    }
 };

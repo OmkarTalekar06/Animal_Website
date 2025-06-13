@@ -70,6 +70,15 @@
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         margin-left: 5px;
     }
+    #btchk{
+        height: 10vh;
+        width: 10vw;
+        margin-left: 48%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        border-radius: 20%;
+        font-family:Californian FB;
+    }
 </style>
 <body>
     <header>
@@ -81,7 +90,7 @@
     </header>
     <nav>
         <div class="nav">
-            <marquee>The correct answers will turn green and wrong ones red</marquee>
+            <marquee>When result will be checked, The correct answers will turn green and wrong ones will turn red</marquee>
         </div>
     </nav>
     <form name="f1">
@@ -93,7 +102,7 @@
         <input type="radio" name="animal" id="cobra"><label for="cobra">Indian King Cobra</label><br>
     </div>
     <div class="question" id="wildlady">
-        <h2>Q2. Who is the Forest Lady of INDIA ?</h2>
+        <h2>Q2. Who is known as The Forest Lady of INDIA ?</h2>
         <input type="radio" name="forestlady" id="pratima"><label for="pratima">Pratima Gowda</label><br>
         <input type="radio" name="forestlady" id="ramabai"><label for="ramabai">Ramabai Jadhav</label><br>
         <input type="radio" name="forestlady" id="tulsi"><label for="tulsi">Tulsi Gowda</label><br>
@@ -114,13 +123,13 @@
         <input type="radio" name="tree" id="OT"><label for="OT">Government Botanical Garden, Ooty</label>
     </div>
     <div class="question" id="wildman">
-        <h2>Q5. Who is the Forest man of INDIA ?</h2>
+        <h2>Q5. Who is known as The Forest man of INDIA ?</h2>
         <input type="radio" name="forestman" id="jadev"><label for="jadev">Jadev Payeng</label><br>
         <input type="radio" name="forestman" id="vishal"><label for="vishal">Vishal Wale</label><br>
         <input type="radio" name="forestman" id="arun"><label for="arun">Arun Gavli</label><br>
         <input type="radio" name="forestman" id="madan"><label for="madan">Madan Chikne</label><br>
     </div>
-    <button type="button" onclick="quiz()">Ckeck</button>
+    <button type="button" onclick="quiz()" id="btchk">Check results</button>
     </form>
     <script src="quiz.js">
     </script>
