@@ -17,3 +17,7 @@ function imchange() {
     wolfImage.classList.add("fade-in");
      setTimeout(imchange, 4000);
 }
+
+function hlp() {
+  alert("The website is very clear and everthing is very easy to access, \nPlease read and check for the needful,\nThankyou for your co-operation.")
+}
