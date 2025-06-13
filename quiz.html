@@ -53,7 +53,7 @@
     .question{
         height: 40vh;
         width: 98%;
-        background-color: antiquewhite;
+        background-color: rgba(240, 248, 255, 0.6);
         margin-top: 5%;
         margin-left: 1%;
 
@@ -85,41 +85,45 @@
         </div>
     </nav>
     <form name="f1">
-    <div class="question">
-        <h2>Q1. Who is the national animal of INDIA ?</h2>
+    <div class="question" id="animal">
+        <h2>Q1. Among the listed who is the national animal of INDIA ?</h2>
         <input type="radio" name="animal" id="lion"><label for="lion">lion</label><br>
         <input type="radio" name="animal" id="tiger"><label for="tiger">Bengal Tiger</label><br>
         <input type="radio" name="animal" id="rhino"><label for="rhino">One horned Rhino</label><br>
         <input type="radio" name="animal" id="cobra"><label for="cobra">Indian King Cobra</label><br>
     </div>
-    <div class="question">
+    <div class="question" id="wildlady">
         <h2>Q2. Who is the Forest Lady of INDIA ?</h2>
         <input type="radio" name="forestlady" id="pratima"><label for="pratima">Pratima Gowda</label><br>
         <input type="radio" name="forestlady" id="ramabai"><label for="ramabai">Ramabai Jadhav</label><br>
         <input type="radio" name="forestlady" id="tulsi"><label for="tulsi">Tulsi Gowda</label><br>
         <input type="radio" name="forestlady" id="ramshi"><label for="ramshi">Ramshi Payeng</label><br>
     </div>
-    <div class="question">
+    <div class="question" id="park">
         <h2>Q3. Which is the biggest national park in INDIA ?</h2>
         <input type="radio" name="nationalpark" id="sanjay"><label for="sanjay">Sanjay Gandhi National park, Borivali</label><br>
         <input type="radio" name="nationalpark" id="jim"><label for="jim">Jim Corbett National park</label><br>
         <input type="radio" name="nationalpark" id="hemis"><label for="hemis">Hemis National park, Jammu & Kashmir</label><br>
         <input type="radio" name="nationalpark" id="greenland"><label for="greenland">Northeast GreenLand National park</label><br>
     </div>
-    <div class="question">
+    <div class="question" id="tree">
         <h2>Q4. Where is the largest banyan tree in the world located ?</h2>
         <input type="radio" name="tree" id="AP"><label for="AP">Acharya Jagdish Chandra Bose Botanical Garden, Andhra Pradesh</label><br>
         <input type="radio" name="tree" id="BG"><label for="BG">Lalbagh Botanical Garden, Bangalore</label><br>
         <input type="radio" name="tree" id="MU"><label for="MU">Sanjay Gandhi National Park, Mumbai</label><br>
         <input type="radio" name="tree" id="OT"><label for="OT">Government Botanical Garden, Ooty</label>
     </div>
-    <div class="question">
+    <div class="question" id="wildman">
         <h2>Q5. Who is the Forest man of INDIA ?</h2>
         <input type="radio" name="forestman" id="jadev"><label for="jadev">Jadev Payeng</label><br>
         <input type="radio" name="forestman" id="vishal"><label for="vishal">Vishal Wale</label><br>
         <input type="radio" name="forestman" id="arun"><label for="arun">Arun Gavli</label><br>
         <input type="radio" name="forestman" id="madan"><label for="madan">Madan Chikne</label><br>
     </div>
+    <button type="button" onclick="quiz()">Ckeck</button>
     </form>
+    <script src="quiz.js">
+    </script>
 </body>
 </html>
+<div style="background-color: #e97474;"
