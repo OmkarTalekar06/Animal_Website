@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve the Quiz !</title>
+</head>
+<style>
+     *{
+        cursor: pointer;
+        margin: 0;
+    }
+    body{
+        background-color: #c29f6e;
+    }
+    .head{
+        position: relative; 
+        width: 100%;
+        height: 20vh;
+        background-color: #333;
+        top: 0; 
+        left:0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 45px;
+        padding-bottom: 10px;
+        padding-left: 30px;
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+       .logo {
+        display: flex;
+        align-items: center;
+    }
+    #logo:hover{
+        color: aliceblue;
+    }
+     .nav{
+        position: relative;
+        width: 100%;
+        height: 7vh;
+        background-color: #ab0303;
+        top:0;
+        left: 0;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        }
+    .question{
+        height: 40vh;
+        width: 98%;
+        background-color: antiquewhite;
+        margin-top: 5%;
+        margin-left: 1%;
+
+    }
+    .question h2{
+        padding-top: 1.5%;
+        margin-left: 5%;
+    }
+    .question input{
+        margin-left: 5%;
+        margin-top: 2%;
+    }
+    .question label{
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin-left: 5px;
+    }
+</style>
+<body>
+    <header>
+    <div class="head">
+        <div class="logo">
+            <h4 id="logo">WildCraft<sup>&#174</sup></h4>
+        </div>
+    </div>
+    </header>
+    <nav>
+        <div class="nav">
+            <marquee>The correct answers will turn green and wrong ones red</marquee>
+        </div>
+    </nav>
+    <div class="question">
+        <h2>Q1. Who is the national animal of INDIA ?</h2>
+        <input type="radio" name="animal" id="lion"><label for="lion">lion</label><br>
+        <input type="radio" name="animal" id="tiger"><label for="tiger">Bengal Tiger</label><br>
+        <input type="radio" name="animal" id="rhino"><label for="rhino">One horned Rhino</label><br>
+        <input type="radio" name="animal" id="cobra"><label for="cobra">Indian King Cobra</label><br>
+    </div>
+    <div class="question">
+        <h2>Q2. Who is the Forest Lady of INDIA ?</h2>
+        <input type="radio" name="forestlady" id="pratima"><label for="pratima">Pratima Gowda</label><br>
+        <input type="radio" name="forestlady" id="ramabai"><label for="ramabai">Ramabai Jadhav</label><br>
+        <input type="radio" name="forestlady" id="tulsi"><label for="tulsi">Tulsi Gowda</label><br>
+        <input type="radio" name="forestlady" id="ramshi"><label for="ramshi">Ramshi Payeng</label><br>
+    </div>
+    <div class="question"></div>
+    <div class="question"></div>
+    <div class="question">
+        <h2>Q3. Who is the Forest man of INDIA ?</h2>
+        <input type="radio" name="forestman" id="jadev"><label for="jadev">Jadev Payeng</label>
+        <input type="radio" name="forestman" id="">
+        <input type="radio" name="forestman" id="">
+        <input type="radio" name="forestman" id="">
+    </div>
+    
+</body>
+</html>
