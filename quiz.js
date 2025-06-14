@@ -21,7 +21,7 @@
     } else {
         document.getElementById("park").style.backgroundColor = "#e97474"
     }
-    if (document.getElementById("AP").checked) {
+    if (document.getElementById("tree").checked) {
         marks += 5;
         document.getElementById("tree").style.backgroundColor = "lightgreen";
     } else {
