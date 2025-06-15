@@ -13,6 +13,10 @@
         cursor: pointer;
         margin: 0;
     }
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
     body{
         background-color: #c29f6e;
     }
@@ -298,13 +302,31 @@
         border-radius: 25%;
     }
     .footer{
-        height: 50vh;
+        height: 60vh;
         background-color: #333;
         width: 100%;
         align-items: center;
         justify-content: center;
         text-align: center;
         padding-top: 5%;
+    }
+    .footer h1{
+        margin-bottom: 5%;
+        font-size: 50px;
+    }
+    .adress{
+        height: 20vh;
+        width: 36vw;
+        text-align: center;
+        float: left ;
+        margin-left: 2%;
+    }
+    .adress p{
+        margin-top: 5%;
+    }
+    .add{
+        float: left;
+        margin-left: 5%;
     }
     .foot{
         float: left;
@@ -328,7 +350,7 @@
     <nav>
    <div class="nav">
             <ul>
-            <li id="nav-bar">Products</li>
+            <li id="nav-bar"><a href="products.html">Products</a></li>
             <li id="nav-bar">Services</li>
             <li id="nav-bar">About</li>
             <li id="nav-bar">Organisations</li>
@@ -391,23 +413,27 @@
     </div>
     <div class="footer">
         <h1>About Us</h1>
-        <div class="foot">
+        <div class="adress">
             <h2>Adress</h2>
+            <div class="add">
             <p>New Delhi Office:</p>
             <p>B.k Bharat street,Red fort road,</p>
             <p>New Delhi</p>
+            </div>
+            <div class="add">
             <P>Mumbai Office:</P>
             <p>Array colony,Mathuradas road,</p>
             <p>Goregaon(E)</p>
             <p>Mumbai:400062</p>
+            </div>
         </div>
-        <div class="foot">
+        <div class="adress">
             <h2>Contact nos.</h2>
-            <p>Offices:</p>
-            <p>New Delhi:997989009</p>
-            <p>Mumbai:87871039</p>
-            <p>Varanasi:832648703</p>
-            <p>Andaman: 7938709134</p>
+            <p  style="margin-top: 1%;">Offices:</p>
+            <p style="margin-top: 1%;">New Delhi:997989009</p>
+            <p style="margin-top: 1%;">Mumbai:87871039</p>
+            <p style="margin-top: 1%;">Varanasi:832648703</p>
+            <p style="margin-top: 1%;">Andaman: 7938709134</p>
         </div>
     </div>
 </body>
