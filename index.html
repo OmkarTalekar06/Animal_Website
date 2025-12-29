@@ -1,440 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WildCraft - Animal welfare</title>
-    <link rel="icon" type="image/png" href="logo-wolf.png"> 
-    <script src="website.js"></script>
-    <link rel="stylesheet" href="website.css">
+    <title>WildCraft – Animal Welfare</title>
+    <link rel="icon" href="logo-wolf.png">
+
+    <style>
+        /* ================= RESET ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            background: #c29f6e;
+            color: #222;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img.icon {
+            width: 22px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* ================= HEADER ================= */
+        header {
+            background: #2b2b2b;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 40px;
+            letter-spacing: 1px;
+        }
+
+        header button {
+            background: #ab0303;
+            border: none;
+            color: white;
+            padding: 10px 18px;
+            margin-left: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        header button:hover {
+            background: #d13c3c;
+        }
+
+        /* ================= NAV ================= */
+        nav {
+            background: #8b1c1c;
+            padding: 12px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 40px;
+            color: white;
+            font-size: 18px;
+        }
+
+        nav li:hover {
+            color: #ffd27d;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            display: flex;
+            padding: 40px;
+            gap: 40px;
+            align-items: center;
+            min-height: 60vh;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h2 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text ul {
+            font-size: 20px;
+            line-height: 2;
+        }
+
+        .hero-text ul li {
+            margin-bottom: 10px;
+        }
+
+        .hero-text ul li img {
+            width: 22px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .hero-media {
+            flex: 1;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 360px;
+            overflow: hidden;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* ================= MISSION ================= */
+        .mission {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 60px 30px;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mission h2 {
+            font-size: 46px;
+            color: #68cfff;
+            margin-bottom: 20px;
+        }
+
+        .mission p {
+            font-size: 24px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* ================= FEATURES ================= */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 40px;
+            min-height: 60vh;
+        }
+
+        .feature {
+            background: #2f2f2f;
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .feature h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feature h3 img {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+        }
+
+        .feature p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* ================= BLOG & QUIZ ================= */
+        .split {
+            display: flex;
+            gap: 30px;
+            padding: 40px;
+            min-height: 60vh;
+        }
+
+        .split-box {
+            flex: 1;
+            background: #333;
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .split-box h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .split-box h2 img {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+        }
+
+        .split-box p {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .split-box button {
+            background: #ab0303;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        /* ================= ACTION CARDS ================= */
+        .actions {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+            padding: 50px 20px;
+            min-height: 60vh;
+            flex-wrap: wrap;
+        }
+
+        .action {
+            width: 280px;
+            background: #2f2f2f;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .action h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .action h3 img {
+            width: 36px;
+            height: 36px;
+        }
+
+        .action p {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .action button {
+            background: #ab0303;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .action:hover {
+            background: #444;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: #1f1f1f;
+            color: white;
+            padding: 60px 30px;
+        }
+
+        footer h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        .footer-grid div {
+            flex: 1;
+            background: #2b2b2b;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .footer-grid h3 {
+            margin-bottom: 15px;
+            color: #ffd27d;
+        }
+
+        .footer-grid p {
+            line-height: 2;
+        }
+
+        .footer-grid a img:hover {
+            transform: scale(1.2);
+            filter: brightness(1.3);
+            cursor: pointer;
+        }
+    </style>
 </head>
-<style>
-    *{
-        cursor: pointer;
-        margin: 0;
-    }
-    a{
-        text-decoration: none;
-        color: inherit;
-    }
-    body{
-        background-color: #c29f6e;
-    }
-    .head{
-        position: relative; 
-        width: 100%;
-        height: 20vh;
-        background-color: #333;
-        top: 0; 
-        left:0;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 45px;
-        padding-bottom: 10px;
-        padding-left: 30px;
-        padding-top: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-sizing: border-box;
-    }
-    .logo {
-        display: flex;
-        align-items: center;
-    }
-    #logo:hover{
-        color: aliceblue;
-    }
-    #hd{
-        margin-right: 25px;
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #555;
-        color: white;
-        border: none;
-        cursor: pointer;
-        animation: fadeIn 1s ease-in-out ;
-    }
-    #hd:hover {
-        background-color: #777;
-        animation: nav 1s ease-in-out;
-    }
-    .nav{
-        position: relative;
-        width: 100%;
-        height: 7vh;
-        background-color: #ab0303;
-        top:0;
-        left: 0;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        
-        box-sizing: border-box;
-        }
-    #nav-bar{
-        float: left;
-        margin-left: 55px;
-        list-style: none;
-    }
-    #nav-bar:hover{
-            color:rgb(240, 144, 0);
-        animation:nav 1s ease-in-out; 
-        cursor: pointer;       
-    }
-    @keyframes nav{
-        0%{
-            transform: scale(1);
-        }
-        50%{
-            transform: scale(1.3);
-        }
-        100%{
-            transform: scale(1);
-        }
-    }
-    @keyframes colch {
-        0%{
-            background-color: #ab0303;
-        }
-        20%{
-            background-color: rgb(245, 112, 10);
-        }
-        40%{
-            background-color: rgb(88, 6, 88);
-        }
-        60%{
-            background-color: rgb(13, 250, 250);
-        }
-        80%{
-            background-color: rgb(244, 96, 4);
-        }
-        100%{
-            background-color: #ab0303;
-        }
-    }
-    @keyframes fadeIn {
-    0% { opacity: 0; transform: scale(0.95); }
-    100% { opacity: 1; transform: scale(1); }
-}
-    @keyframes fadeOut {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.05); }
-}
-    #nav-but{
-        float: left;
-        margin-left: 36vw;
-        background-color: #555;
-        padding: 08px 15px
-        
-    }
-     #nav-but:hover{
-        animation: colch 2s infinite;
-        display: block; 
-     }
-     #nav-hg{
-        height:28vh;
-        position:fixed;
-        margin-left: 1100px;
-        margin-top: 80px;
-        background-color: gray;
-        flex-direction: column;    
-        align-self: center;
-        display: none;
-        
-     }
-     .nav-bar{
-        list-style: none;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        width: fit-content;
-        
-     }
-     #nav-ul{
-        padding: 0;
-        justify-self:center;
-     }
-     .main{
-        position:relative;
-        top:10vh;
-     }
-     .main ul{
-        margin-top: 20px;
-        font-size: 28px;
-        margin-left: 30px;
-     }
-     .main li{
-        margin-top: 20px;
 
-     }
-     .main h1{
-        font-size: 50px;
-        margin-left: 30px;
-     }
-
-     .image #wolf{
-        height: 300px;
-        width: 550px;
-        position: relative;
-        margin-top: -10vh;
-        margin-left: 55%;
-        opacity: 90%;
-        animation: fadeIn 1s ease-in-out;
-     }
-    
-    .fade-in{
-        animation: fadeIn 1s ease-in-out;
-    }
-    .action{
-        margin-top: 10vh;
-        display:flex;
-    }
-    #info{
-        height: 300px;
-        width: 99%;
-        text-align: center;
-        align-items: center;
-        background-color: rgb(51, 51, 51);
-        color: aliceblue;
-        padding-top: 2%;
-        margin-top: 100px;
-        margin-left: 0.5%;
-        animation: fadeIn 2s ease-in;
-    }
-    #info-h2{
-        margin-top: 50px;
-        font-size: 50px;
-        font-family: Bradley Hand ITC;
-        color: rgba(104, 207, 255, 0.7);
-    }
-    #info-h3{
-        margin-top: 50px;
-        font-size: 28px;
-        font-family: Century Schoolbook;
-        color: aliceblue;
-    }
-    #blog{
-        height: 400px;
-        width: 49%;
-        text-align: center;
-        align-items: center;
-        float: left;
-        background-color: rgb(51, 51, 51);
-        padding-top: 2%;
-        margin-top: 20px;
-        margin-left: 0.5%;
-        animation: fadeIn 2s ease-in;
-    }
-    #blog button{
-        margin-top: 40px;
-        height: 60px;
-        width: 100px;
-        font-size: 20px;
-        border-radius: 30%;
-        background-color: #444;
-        color: aliceblue;
-        font-family: Bradley Hand ITC;   
-    }
-    #quiz p{
-        color: aliceblue;
-        font-size: 30px;
-        margin-top: 60px;
-        font-family: Century Schoolbook;
-    }
-    #quiz button{
-        margin-top: 40px;
-        height: 60px;
-        width: 100px;
-        font-size: 20px;
-        border-radius: 30%;
-        background-color: #444;
-        color: aliceblue;
-        font-family: Bradley Hand ITC;
-        }
-    #quiz{
-        height: 400px;
-        width: 49%;
-        text-align: center;
-        align-items: center;
-        background-color: rgb(51, 51, 51);
-        padding-top: 2%;
-        margin-top: 20px;
-        margin-left: 50.5%;
-        animation: fadeIn 2s ease-in;
-    }
-    .action div{
-        margin-bottom: 20px;
-        height: 300px;
-        width: 200px;
-        background-color: #333;
-        margin-left: 12%;
-    }
-    .act{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 20px;
-        padding: 10px;
-        border-radius: 20px;
-        text-align: center;
-        animation: fadeIn 1s ease-in-out;
-        border: 2px black solid;
-    }
-    .act:hover{
-        background-color:gray;
-        color: #333;
-    }
-    .act input{
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #555;
-        color: rgb(249, 247, 249);
-        border: 1px black solid;
-        cursor: pointer;
-        border-radius: 10%;
-    }
-    .act input:hover{
-        animation: nav 1s ease-in-out;
-        color: #333;
-        border-radius: 25%;
-    }
-    .footer{
-        height: 60vh;
-        background-color: #333;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding-top: 5%;
-    }
-    .footer h1{
-        margin-bottom: 5%;
-        font-size: 50px;
-    }
-    .adress{
-        height: 20vh;
-        width: 36vw;
-        text-align: center;
-        float: left ;
-        margin-left: 2%;
-    }
-    .adress p{
-        margin-top: 5%;
-    }
-    .add{
-        float: left;
-        margin-left: 5%;
-    }
-    .foot{
-        float: left;
-        margin-left: 20%;
-        font-size: 24px;
-        margin-top: 10px;
-    }
-</style>
 <body>
+
     <header>
-    <div class="head">
-        <div class="logo">
-            <h4 id="logo">WildCraft<sup>&#174</sup></h4>
-        </div>
+        <h1>WildCraft<sup><span style="font-size:18px; vertical-align:super;">®</span></sup></h1>
         <div>
-        <a href="contact.html"><button id="hd">contact</button></a>
-        <button id="hd" onclick="hlp()">help</button>
+            <button>Contact</button>
+            <button>Help</button>
         </div>
-    </div>
     </header>
-    <nav>
-   <div class="nav">
+
+<nav>
+    <ul>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="organisations.html">Organisations</a></li>
+        <li><a href="donate.html">Donate</a></li>
+    </ul>
+</nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Protecting Wildlife Together</h2>
+            <p>WildCraft is a government-recognised non-profit organisation working for animal welfare.</p>
             <ul>
-            <li id="nav-bar"><a href="products.html">Products</a></li>
-            <li id="nav-bar">Services</li>
-            <li id="nav-bar">About</li>
-            <li id="nav-bar">Organisations</li>
-            <li id="nav-bar">Donate</li>
-            </ul>
-            <a href="notify.html"><button id="nav-but">&#128276</button></a>
-        </div>
-        <div id="nav-hg">
-            <ul id="nav-ul">
-                <li class="nav-bar"><button>Login</button></li>
-                <li class="nav-bar"><button>sign-up</button></li>
-                <li class="nav-bar"><button>Feedback</button></li>
-                <li class="nav-bar"><button>Report</button></li>
-                <li class="nav-bar"><button>News</button></li>
+                <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">Wildlife rescue & shelters</li>
+                <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">Adoption programs</li>
+                <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">Conservation campaigns</li>
+                <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">Volunteer missions</li>
             </ul>
         </div>
-    </nav>
-    <div class="main">
-        <h1>WildCraft</h1>
-        <ul>
-        <li>WildCraft is a non-profit organisation that works for the welfare of animals.</li>
-        <li>We are Gov recognised</li>
-        <li>We make shelters for animal welfare</li>
-        <li>We adopt endangering animals</li>
-        </ul>
-    </div>
-    <div class="image">
-        <video autoplay loop muted playsinline src="animal-pic.mp4" id="wolf">
-    </div>
-    <div id="info">
-        <h2 id="info-h2">Be A Voice for the Voiceless</h2>
-        <h3 id="info-h3">Be a part of our team and be a part of our campaign for the protection of mother nature</h3>
-    </div>
-    <div id="blog">
-        <h2 id="info-h2">Blogs</h2>
-        <h3 id="info-h3">Read the our wildlife blogs and get information related to wildlife by world famous activists &#8594</h3>
-        <a href="blog.html"><button>Blogs</button></a>
-    </div>
-    <div id="quiz">
-         <h2 id="info-h2">Quiz</h2>
-        <h3 id="info-h3">Take part in our Wildlife Quiz and get your Wildlife knowledge enriched &#8594</h3>
-        <a href="quiz.html"><button>Quiz</button></a>
-    </div>
-    <div class="action">
-        <div class="act">
-            <h1>Donate</h1>
-            <p>Donate for welfare of animals</p>
-            <input type="button" value="donate">
-        </div>
-        <div class="act">
-            <h1>Adopt</h1>
-            <p>Adopt animals</p>
-            <a href="adopt.html"><input type="button" value="Adopt" ></a>
-        </div>
-        <div class="act">
-            <h1>Join Us</h1>
-            <p>Join us on rescue missions</p>
-            <input type="button" value="apply now">
-        </div>
-    </div>
-    <div class="footer">
-        <h1>About Us</h1>
-        <div class="adress">
-            <h2>Adress</h2>
-            <div class="add">
-            <p>New Delhi Office:</p>
-            <p>B.k Bharat street,Red fort road,</p>
-            <p>New Delhi</p>
-            </div>
-            <div class="add">
-            <P>Mumbai Office:</P>
-            <p>Array colony,Mathuradas road,</p>
-            <p>Goregaon(E)</p>
-            <p>Mumbai:400062</p>
+
+        <div class="hero-media">
+            <div class="slider">
+                <img src="animals-img/elephant.jpg" class="slide active">
+                <img src="animals-img/giraffe.jpg" class="slide">
+                <img src="animals-img/panda.jpg" class="slide">
+                <img src="animals-img/tiger.jpg" class="slide">
             </div>
         </div>
-        <div class="adress">
-            <h2>Contact nos.</h2>
-            <p  style="margin-top: 1%;">Offices:</p>
-            <p style="margin-top: 1%;">New Delhi:997989009</p>
-            <p style="margin-top: 1%;">Mumbai:87871039</p>
-            <p style="margin-top: 1%;">Varanasi:832648703</p>
-            <p style="margin-top: 1%;">Andaman: 7938709134</p>
+    </section>
+
+    <section class="mission">
+        <h2>Be A Voice for the Voiceless</h2>
+        <p>
+            Join our mission to protect endangered animals, conserve nature,
+            and build a safer world for wildlife.
+        </p>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h3><img src="https://cdn-icons-png.flaticon.com/512/616/616408.png">Rescue</h3>
+            <p>Emergency rescue and rehabilitation for injured wildlife.</p>
         </div>
-    </div>
+        <div class="feature">
+            <h3><img src="https://cdn-icons-png.flaticon.com/512/616/616408.png">Shelter</h3>
+            <p>Safe shelters with medical and food support.</p>
+        </div>
+        <div class="feature">
+            <h3><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">Awareness</h3>
+            <p>Education programs and wildlife awareness campaigns.</p>
+        </div>
+    </section>
+
+    <section class="split">
+        <div class="split-box">
+            <h2><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png">Blogs</h2>
+            <p>Learn from wildlife experts and activists.</p>
+            <button>Read Blogs</button>
+        </div>
+
+        <div class="split-box">
+            <h2><img src="https://cdn-icons-png.flaticon.com/512/2991/2991137.png">Quiz</h2>
+            <p>Test your wildlife knowledge.</p>
+            <button>Start Quiz</button>
+        </div>
+    </section>
+
+    <section class="actions">
+        <div class="action">
+            <h3><img src="https://cdn-icons-png.flaticon.com/512/196/196566.png">Donate</h3>
+            <p>Support animal welfare</p>
+            <button>Donate</button>
+        </div>
+
+        <div class="action">
+            <h3><img src="https://cdn-icons-png.flaticon.com/512/616/616408.png">Adopt</h3>
+            <p>Give animals a home</p>
+            <button>Adopt</button>
+        </div>
+
+        <div class="action">
+            <h3><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">Join Us</h3>
+            <p>Volunteer for rescue missions</p>
+            <button>Apply</button>
+        </div>
+    </section>
+
+    <footer>
+        <h2>About WildCraft</h2>
+        <div class="footer-grid">
+
+            <div>
+                <h3>Address</h3>
+                <p><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" class="icon"> New Delhi – Red Fort Road</p>
+                <p><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" class="icon"> Mumbai – Goregaon (E)</p>
+                <p><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="icon"> www.wildcraft.org</p>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <p><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" class="icon"> Delhi: 997989009</p>
+                <p><img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" class="icon"> Mumbai: 87871039</p>
+                <p><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="icon"> info@wildcraft.org</p>
+            </div>
+
+            <div style="text-align:center;">
+                <h3>Follow Us</h3>
+                <div style="display:flex; justify-content:center; gap:15px; margin-top:10px;">
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width:32px; height:32px; transition:0.3s;">
+                    </a>
+                    <a href="https://x.com" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X" style="width:32px; height:32px; transition:0.3s;">
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style="width:32px; height:32px; transition:0.3s;">
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style="width:32px; height:32px; transition:0.3s;">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        let slides = document.querySelectorAll(".slide");
+        let index = 0;
+        setInterval(() => {
+            slides[index].classList.remove("active");
+            index = (index + 1) % slides.length;
+            slides[index].classList.add("active");
+        }, 3000);
+    </script>
+
 </body>
 </html>
