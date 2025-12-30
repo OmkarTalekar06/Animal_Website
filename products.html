@@ -1,128 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products - WildCraft</title>
-    <link rel="icon" type="image/png" href="logo-wolf.png">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Products – WildCraft</title>
+<link rel="icon" href="logo-wolf.png">
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
-    *{
-        cursor: pointer;
-        margin: 0;
-    }
-    body{
-        background-color: #c29f6e;
-    }
-    .head{
-        position: relative; 
-        width: 100%;
-        height: 20vh;
-        background-color: #333;
-        top: 0; 
-        left:0;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 45px;
-        padding-bottom: 10px;
-        padding-left: 30px;
-        padding-top: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-sizing: border-box;
-    }
-    .logo {
-        display: flex;
-        align-items: center;
-    }
-    #logo:hover{
-        color: aliceblue;
-    }
-    .nav{
-        position: relative;
-        width: 100%;
-        height: 7vh;
-        background-color: #ab0303;
-        top:0;
-        left: 0;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        
-        box-sizing: border-box;
-        }
-    .us{
-        height: 55vh;
-        width: 20%;
-        background-color: #333;
-        float: left;
-        margin-top: 5%;
-        margin-left: 4%;
-    }
-    .us:hover{
-        color: aliceblue;
-    }
-    a{
-        color: inherit;
-        text-decoration: none;
-    }
-    .up:hover{
-        opacity: 40%;
-    }
-    .down h4{
-        opacity: 0.1;
-        transition: opacity 0.3s;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-    .down:hover h4{
-        opacity: 1;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#c29f6e;
+}
+
+header{
+    background:#2b2b2b;
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+}
+
+nav{
+    background:#8b1c1c;
+    color:white;
+    padding:12px;
+    text-align:center;
+}
+
+.page-title{
+    text-align:center;
+    padding:40px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+    padding:40px;
+}
+
+.product{
+    height:320px;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,0.35);
+    position:relative;
+}
+
+.product-img{
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    filter:brightness(70%);
+    transition:0.4s;
+}
+
+.product:hover .product-img{
+    transform:scale(1.1);
+}
+
+.product-content{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:20px;
+    background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+    color:white;
+}
+
+.product-content h3{
+    font-size:26px;
+}
+
+.product-content p{
+    font-size:14px;
+    margin:10px 0;
+}
+
+/* ===== BUY BUTTON FIXED ===== */
+.buy-btn{
+    font-family: Calibri, sans-serif;
+    font-size: 16px;              /* original visual size */
+    background: #ab0303;
+    border: none;
+    padding: 8px 20px;            /* ORIGINAL SIZE */
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;                     /* tight spacing */
+}
+
+/* BUY text handwriting */
+.buy-text{
+    position: relative;
+}
+
+.buy-text::after{
+    content: "BUY";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: white;
+}
+
+.buy-btn:hover .buy-text::after{
+    animation: write 0.7s steps(3) forwards;
+}
+
+@keyframes write{
+    to { width: 100%; }
+}
+
+/* Cart animation — isolated */
+.buy-btn i{
+    margin-left: 6px;             /* prevents overlap */
+    font-size: 14px;
+    animation: cartBounce 1.2s infinite;
+}
+
+@keyframes cartBounce{
+    0%,100%{ transform: translateY(0); }
+    50%{ transform: translateY(-2px); }
+}
+
+/* footer */
+footer{
+    background:#1f1f1f;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
 </style>
+</head>
+
 <body>
-     <header>
-    <div class="head">
-        <div class="logo">
-            <h4 id="logo">WildCraft Products<sup>&#174</sup></h4>
-        </div>
-    </div>
-    </header>
-    <nav>
-        <div class="nav">
-            <marquee>Physical and Financial adoptions both are available with us</marquee>
-        </div>
-    </nav>
-    <div class="us">
-        <div class="up" style="background: url(products/veggies3.jpg); height: 70%;  ">
-        </div>
-        <a href="google.com"><div class="down" style="height: 50%; margin-top: -50%;">
-            <h4 style="margin-top: 35%; font-size: 30px; margin-left: 2%; text-align: center; color :aliceblue; background-color: #d37575;">Fresh Vegetables</h4>
-            <h6 style="margin-top: 10%; font-size: 12px; margin-left: 2%;">Donate or join us in mission of securing unsafe cows and providing nutrition to 50,000 cows in our trust</h6>
-        </div></a>
-    </div>
-    <div class="us">
-        <div class="up" style="background: url(products/pulses.jpg); background-repeat: no-repeat; height: 70%;">
-        </div>
-        <div class="down" style="height: 50%; margin-top: -50%;">
-            <h4 style="margin-top: 35%; font-size: 30px; margin-left: 2%; text-align: center; color: #3f7dc0; background-color: aliceblue;">Pulses</h4>
-             <h6 style="margin-top: 10%; font-size: 12px; margin-left: 2%;">Adopt a Calf and be a parent of newborn calves,<br> Your donations will be used for nourishment <br> and  devlopment of newborn calves</h6>
-        </div>
-    </div>
-    <div class="us">
-        <div class="up" style="background: url(products/masala.jpg); background-repeat: no-repeat; height: 70%;">
-        </div>
-        <div class="down" style="height: 50%; margin-top: -50%;">
-            <h4 style="margin-top: 35%; font-size: 30px; margin-left: 2%; text-align: center; color: rgb(36, 151, 59); background-color: #333;">Masala</h4>
-            <h6 style="margin-top: 10%; font-size: 12px; margin-left: 2%;">Stray dogs are just in the need of a family & friends,<br> Your donations will be used for nourishment <br> of malnourished and needful dogs</h6>
-        </div>
-    </div>
-    <div class="us">
-        <div class="up" style="background: url(products/milk2.jpg); background-repeat: no-repeat; height: 70%;">
-        </div>
-        <div class="down" style="height: 50%; margin-top: -50%;">
-            <h4 style="margin-top: 35%; font-size: 30px; margin-left: 2%; color: rgb(0, 0, 0); text-align: center; background-color: aliceblue;">Dairy Products</h4>
-             <h6 style="margin-top: 10%; font-size: 12px; margin-left: 2%;">Newborn cats & Adult cats are,<br> available for adoptions. <br> adopt now and start parenting your companion </h6>
-        </div>
-    </div>
+
+<header>
+<h1>WildCraft<sup><span style="font-size:18px; vertical-align:super;">®</span></sup></h1>
+<h3>Products</h3>
+</header>
+
+<nav>
+Physical and Financial adoptions are available with us
+</nav>
+
+<section class="page-title">
+<h2>Our Welfare Products</h2>
+<p>Every purchase supports animal rescue and care</p>
+</section>
+
+<section class="products">
+
+<div class="product">
+<div class="product-img" style="background-image:url('products/veggies3.jpg');"></div>
+<div class="product-content">
+<h3>Fresh Vegetables</h3>
+<p>Buy fresh, organic vegetables directly from WildCraft for your home.</p>
+<button class="buy-btn">
+<span class="buy-text">BUY</span>
+<i class="fa fa-shopping-cart"></i>
+</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-img" style="background-image:url('products/pulses.jpg');"></div>
+<div class="product-content">
+<h3>Pulses</h3>
+<p>Purchase high-quality pulses for your kitchen.</p>
+<button class="buy-btn">
+<span class="buy-text">BUY</span>
+<i class="fa fa-shopping-cart"></i>
+</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-img" style="background-image:url('products/masala.jpg');"></div>
+<div class="product-content">
+<h3>Masala</h3>
+<p>Shop premium spices and masalas to enhance your meals.</p>
+<button class="buy-btn">
+<span class="buy-text">BUY</span>
+<i class="fa fa-shopping-cart"></i>
+</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-img" style="background-image:url('products/milk2.jpg');"></div>
+<div class="product-content">
+<h3>Dairy Products</h3>
+<p>Buy fresh dairy products from WildCraft for your family.</p>
+<button class="buy-btn">
+<span class="buy-text">BUY</span>
+<i class="fa fa-shopping-cart"></i>
+</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-img" style="background-image:url('products/fruits.jpg');"></div>
+<div class="product-content">
+<h3>Fresh Fruits</h3>
+<p>Order a variety of fresh fruits online.</p>
+<button class="buy-btn">
+<span class="buy-text">BUY</span>
+<i class="fa fa-shopping-cart"></i>
+</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-img" style="background-image:url('products/animal_food.png');"></div>
+<div class="product-content">
+<h3>Animal Food</h3>
+<p>Buy high-quality dog and cat food for your pets.</p>
+<button class="buy-btn">
+<span class="buy-text">BUY</span>
+<i class="fa fa-shopping-cart"></i>
+</button>
+</div>
+</div>
+
+</section>
+
+<footer>
+© 2025 WildCraft – Animal Welfare Organisation
+</footer>
+
 </body>
 </html>
