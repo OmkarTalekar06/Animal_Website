@@ -1,7 +1,5 @@
-name = "animal-website"                # Worker name
-compatibility_date = "2026-01-02"      # Today’s date
-type = "javascript"
+name = "animal-website"
+compatibility_date = "2026-01-02"
 
-[site]
-bucket = "./"                           # Folder containing all your HTML, CSS, JS, images
-entry-point = "workers-site"            # Default for workers-sites
+[assets]
+directory = "./"
